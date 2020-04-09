@@ -134,139 +134,196 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> <%if(index){%> article-index<%}%>" itemscope itemprop="blogPost">
+            <article id="post-如何搭建博客" class="article article-type-post " itemscope itemprop="blogPost">
  
   <div class="article-inner">
-    <% if (post.link || post.title){ %>
+    
       <header class="article-header">
-        <%- partial('post/title', {class_name: 'article-title'}) %>
-        <% if (!post.noDate){ %>
-        <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
-        <% } %>
-      </header>
-    <% } %>
-    <div class="article-entry" itemprop="articleBody">
-      <% if (post.excerpt && index){ %>
-        <%- post.excerpt %>
-        <% if (theme.excerpt_link) { %>
-          <a class="article-more-a" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
-        <% } %>
-      <% } else { %>
-        <%- post.content %>
-      <% } %>
+        
+  
+    <h1 class="article-title" itemprop="name">
+      如何搭建个人博客
+    </h1>
+  
 
-      <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i><%= theme.reward_wording%><i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    <% if(theme.alipay) {%>
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="<%= theme.alipay%>">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    <% } %>
-                    <% if(theme.weixin) {%>
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="<%= theme.weixin%>">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    <% } %>
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      <% } %>
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/04/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2020-04-03T13:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
+</a>
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="利用hexo搭建博客步骤"><a href="#利用hexo搭建博客步骤" class="headerlink" title="利用hexo搭建博客步骤"></a>利用hexo搭建博客步骤</h3><img src="/images/cat.PNG">
+<a id="more"></a>
+
+<p><font color=gray size=4>奇怪的知识增加了！</font></p>
+<h4 id="一、准备"><a href="#一、准备" class="headerlink" title="一、准备"></a>一、准备</h4><p>1.首先要注册github账号并配置好Git</p>
+<p><a href="https://blog.csdn.net/qq_41782425/article/details/85183250" target="_blank" rel="noopener">Git及GitHub使用教程</a></p>
+<p>2.下载Nodejs并安装</p>
+<p>打开下方链接，下载LTS的，一直点Next，除了改安装目录外，其他按照默认的就可以。</p>
+<p><a href="https://nodejs.org" target="_blank" rel="noopener">Windows版本Nodejs下载地址</a></p>
+<p>3.检查是否安装成功</p>
+<p>以管理员身份打开命令行窗口(cmd)，依次输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>若可以正常出现版本号，证明安装成功了！(如果这里出现了问题那就从头开始吧…)<br>4.下载一个文本编辑器(如果你能接收记事本的界面可以忽略这一步)<br>我使用的是Notespad++<br><a href="https://notepad-plus-plus.org/downloads/" target="_blank" rel="noopener">Notepad++下载地址</a></p>
+<h4 id="二、开始搭建博客"><a href="#二、开始搭建博客" class="headerlink" title="二、开始搭建博客"></a>二、开始搭建博客</h4><p>1.在命令行窗口中输入以下命令安装cnpm工具：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>2.安装hexo工具，在命令行窗口中继续输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>安装完后可以验证一下是否成功，继续输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+<p>能够正常出现版本信息就成功了！(如果失败，请重新安装…)<br>3.新建blog文件夹,可以直接去硬盘中创建，也可以用命令行，这里用命令行演示(由于在本人电脑Windows的命令行窗口中在后续的步骤曾经出错过，所以接下来使用的命令行窗口是我们在准备阶段安装好的Git工具”Git Bash”)<br>1)在Git Bash命令行窗口中打开你想创建blog文件夹的目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">比如打开E盘：	<span class="built_in">cd</span> /E</span><br></pre></td></tr></table></figure>
+<p>2)使用命令行创建blog文件夹：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line">这里的blog是文件夹名，可以自己更改</span><br></pre></td></tr></table></figure>
+<p>创建完了可以去对应目录下看看有没有(如果搭建博客过程出错，大不了删除这个blog文件夹然后重来)<br>3)使用hexo来初始化blog</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">先进入我们创建的blog文件夹：</span><br><span class="line"><span class="built_in">cd</span> blog/</span><br><span class="line">再使用hexo初始化：</span><br><span class="line">hexo init</span><br><span class="line">完了之后去blog文件夹下检查是否有生成了一堆东西</span><br></pre></td></tr></table></figure>
+<p>4)启动搭建好的博客，在命令行窗口中继续输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>然后会生成一个地址:<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a><br>在浏览器中打开可以看到已经初始化的博客</p>
+<h4 id="三、创建自己的第一篇博客"><a href="#三、创建自己的第一篇博客" class="headerlink" title="三、创建自己的第一篇博客"></a>三、创建自己的第一篇博客</h4><p>1.Ctrl+c退出博客运行后，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">"博客的标题"</span></span><br></pre></td></tr></table></figure>
+<p>检查在目录下是否生成了文章：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="built_in">source</span>/_posts/</span><br></pre></td></tr></table></figure>
+<p>2.对博客(.md格式)进行编辑<br>可以使用文本编辑器，如Notepad++；推荐使用<b><font color=green>Hexo admin</font></b>插件实时编辑：<br>如果有进入到“source/_posts/”目录下，记得退回到blog目录，退回目录为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ../..</span><br><span class="line">注意：这个命令是退出两层，如果是一层：<span class="built_in">cd</span> ..就好</span><br><span class="line">在命令行窗口输入：</span><br><span class="line">cnpm install --save hexo-admin</span><br></pre></td></tr></table></figure>
+<p>安装成功后，就可以打开 <a href="http://localhost:4000/admin/" target="_blank" rel="noopener">http://localhost:4000/admin/</a> 访问到hexo-admin管理页面了</p>
+<p>3.创建完博客后，更新内容到<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a><br>依次输入(其实直接到浏览器页面直接刷新也可以)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">清理命令：</span><br><span class="line">hexo clean</span><br><span class="line">生成命令：</span><br><span class="line">hexo g</span><br><span class="line">运行博客命令：</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p><font color=Green size=4>到目前为止，博客搭建的基本操作就完成了，接下来介绍怎么把我们的博客部署到GitHub上</font></p>
+<h4 id="四、把hexo搭建的博客部署到GitHub上"><a href="#四、把hexo搭建的博客部署到GitHub上" class="headerlink" title="四、把hexo搭建的博客部署到GitHub上"></a>四、把hexo搭建的博客部署到GitHub上</h4><p>1.打开github网站，新建一个Repository，”Repository name”必须是这种格式：<b>“你的Github账户名.github.io”</b>，以后在浏览器输入”你的Github账户名.github.io”就可以访问博客了<br>2.回到命令行窗口，在blog目录下安装一个git部署插件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<p>3.打开blog文件夹，编辑<b>“_config.yml”</b>文件(可以用文本编辑器Notepad++)<br>拉到文件夹最底部，修改如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: <span class="string">'git'</span></span><br><span class="line">  repo: 这里的地址就是你刚刚创建的仓库的地址，即：https://github.com/你的Github名/你的Github名.github.io.git 这种格式</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p><font color=red size=4>注意！！！这里的type和repo、branch后面都有一个空格的！！！</font><br>4.最后一步！！！<br>部署到远端：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>这里可能会跳出来窗口让你输入你的GitHub名和密码。<br>回到你的GitHub仓库，刚刚创建的空仓库会多了很多东西。<br>以后访问博客就可以在浏览器输入”你的Github账户名.github.io”进行访问了！！！<br><font color=green size=4>完结撒花！！！</font></p>
+
+      
+
+      
     </div>
     <div class="article-info article-info-index">
-      <%if(post.top){%>
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
-      <% } %>
-      <%- partial('post/tag') %>
-      <%- partial('post/category') %>
-      <% if (index && theme.show_all_link){ %>
-        <p class="article-more-link">
-          <a class="article-more-a" href="<%- url_for(post.path) %>"><%= theme.show_all_link %> >></a>
-        </p>
-      <% } %>
+      
+      
+      
 
-      <% if (!index && theme.share_jia){ %>
-        <%- partial('post/share') %>
-      <% } %>
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-<% if (!index){ %>
-  <%- partial('post/nav') %>
-<% } %>
-<%- partial('_partial/aside') %>
 
-
-<% if (!index && post.comments){ %>
-  <% if (theme.duoshuo){ %>
-  <%- partial('post/duoshuo', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
-  <% } %>
   
-  <% if (theme.wangyiyun){ %>
-  <%- partial('post/wangyiyun', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
-  <% } %>
+<nav id="article-nav">
+  
+    <a href="/2020/04/04/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第一篇博客文章</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-  <% if (theme.changyan_appid && theme.changyan_conf){ %>
-  <%- partial('post/changyan', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
-  <% } %>
 
-  <% if (theme.disqus || config.disqus_shortname){ %>
-    <section id="comments">
-      <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = '<%= theme.disqus || config.disqus_shortname %>'; // required: replace example with your forum shortname
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
 
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
-    </section>
-  <% } %>
 
-  <% if (theme.gitment_owner && theme.gitment_repo &&theme.gitment_oauth && theme.gitment_oauth.client_id && theme.gitment_oauth.client_secret){ %>
-  <%- partial('post/gitment', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
-  <% } %>
-<% } %>
+
+  
+  
+  
+
+  
+
+  
+
+  
+
 	
           </div>
         </div>
@@ -503,5 +560,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"left","width":100,"height":200},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</body>
 </html>
