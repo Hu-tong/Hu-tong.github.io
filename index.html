@@ -8,6 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>胡同学的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <script>
+    (function(){
+        if('{{ page.password }}'){
+            if (prompt('请输入文章密码') !== '{{ page.password }}'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+  </script>
+  
   <meta property="og:type" content="website">
 <meta property="og:title" content="胡同学的博客">
 <meta property="og:url" content="http://yoursite.com/index.html">
@@ -354,7 +366,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        想要查看文章必须输入正确密码！
+        <h4 id="我很疑惑为什么你会打开一只猫的博客？？？？？"><a href="#我很疑惑为什么你会打开一只猫的博客？？？？？" class="headerlink" title="我很疑惑为什么你会打开一只猫的博客？？？？？"></a>我很疑惑为什么你会打开一只猫的博客？？？？？</h4><img src="/images/cat.PNG">
         
           <a class="article-more-a" href="/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/#more">more >></a>
         

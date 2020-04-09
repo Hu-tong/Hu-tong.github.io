@@ -8,18 +8,31 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>我的第一篇博客文章 | 胡同学的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="想要查看文章必须输入正确密码！">
+  
+  <script>
+    (function(){
+        if('{{ page.password }}'){
+            if (prompt('请输入文章密码') !== '{{ page.password }}'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+  </script>
+  
+  <meta name="description" content="我很疑惑为什么你会打开一只猫的博客？？？？？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的第一篇博客文章">
 <meta property="og:url" content="http://yoursite.com/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/index.html">
 <meta property="og:site_name" content="胡同学的博客">
-<meta property="og:description" content="想要查看文章必须输入正确密码！">
+<meta property="og:description" content="我很疑惑为什么你会打开一只猫的博客？？？？？">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/cat.PNG">
 <meta property="article:published_time" content="2020-04-03T03:47:00.000Z">
-<meta property="article:modified_time" content="2020-04-09T11:44:57.665Z">
+<meta property="article:modified_time" content="2020-04-09T12:08:19.462Z">
 <meta property="article:author" content="胡同学">
-<meta property="article:tag" content="文章密码">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/cat.PNG">
   
     <link rel="alternative" href="/atom.xml" title="胡同学的博客" type="application/atom+xml">
   
@@ -160,15 +173,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <div class="hbe-input-container">
-  <input type="password" id="hbePass" placeholder="" />
-    <label for="hbePass">输入密码查看文章：</label>
-    <div class="bottom-line"></div>
-  </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="04d7736287bb50fdab84a18305a1bb49a5282fdb552317489e4366a4be6607e1">a6c7075bf17ecae54c5058cd3718e46e60121e7348d7fe80dd2b6bc45593012c0ef750d5508065b6e27d680aa0819d92f525dd3585470f663fcebece645bd95da3b89f1d13045c321ab50a87035616cc71a506f30b042f36027b8928324197e0a3afe6dd0e1084b4700bc5fcd16f127f1f0e3dacb6521e48b233e9fff82410e1d5277a126e96af3b9a87c5ca32dd5896369c84d8c6eb282b7389d7f535b790bc191560933f5dd70f592645ec69df2ed60f30d27b3030ab22ce0c389cb828f88e87b2d302fd2fc20672abbec72ddeeecb6d37a59e36b0f34676aae3aeb1b5955844cd99f98ece37e372bc2ecb03243e13172848cb65c8d2403311e6817ec9a351a2afc298045cec00dc234d63c602ec44a0656c0b89ebdee4074fb8519db848e31d26ba8a71b8c4c7cf575b2f0c4024d4c398b699a95ac0685c0fbdee04eac432c81a589915dac5c4f2f144474e90cc77fb2250a11081fc51bfbf9eb098a124b35aa4bed68181551e57679c1d5cb28f2cf5aa6010b952d547ec01c69efafc34f8e364a27321f9f573a5fe5bba99816e2b5a328bc1a4eaeb7825fdabb73ad6c8a09fc8f001fbb810c178df99244b7d51b342553e84ad04e75ad30bc9b3c89c51c092d03ede3594e30d2b6348cfa4b3cef4df380e1b4bef597fd3819b364feeee0c144d4274774182d30630af48b7cb7340a9ec91af90c9bba0f735afc33c2096df9ad6b1eccb5444f36f71b47119d72759d265cafcaa54ad56d11f79f762e7032098adf8b7e21e5802ce07a5982598b0dc8d1101c41076b35667ba0b31faa34593e032b72c16a97b94f895dee49380e55ea5e4375b3f4db929555c170690fc7110c6f41217712756e802b9fa9f26657b608890013585c534b9a61b8a4e66666b8f5127a94f97c5f9d4b88fcdcfdca6f7efd29d0bfc401df2f0e0025d4109d8826c98504f62ebb57562293aa2ad0585318209a8fcff6c19917690915d192ffc37cdb1d358cb0a4469ec4d09f41d0d12249cc545c806acacd34dae3c0ff58c7fb834fd202035fa1fdd7c8accb1c3b5c9e687aa3ae4a380dcb99677dc9ad00e020db4bb627e71def3b8e84a33225321b5ef2c6222507755a2d68e7f34e85574967205a74c7a4ae97b6788461d2716b7f72a3ac73fda4b57e3834b462b2b47266e7ddd9f6caa23a91158c2210ea9c5a7b1faf710539b2625761ba8912180347b6e053e9ce80560ecf7d56bfb967a7387d1501f8924f31c08f4be4ac57dc2558e8941a8cede68c19993e536b1a3d18a227ad88dca51e616b43f720778ba4b2ab11c2c450760df3c67e6e871d81bc25739155109018fe63368332ee769bd4f2df8b7c57cf8165e4afb452142879a4224557eed9c2a893b741a5b0f4be0719acfc519dc1fe7d77d92e708a8f06502447eab1898ea6e7237767e131938987d53be2049a461c7d2f9ad813f1d76957bbeebb2f21a2355b14a4843f107e238b1008ca5e1f642d315062459c35b3a5757468f5f8e4620b48ab508459932d61e393622aaed93e74de054f35bd44ece76f268b258b7816b8bdd8fbb1f48b553375c10ee1d7a00b8682ec6d8f4239218052fa42c27ec94800cc62247ca39d03fce5bf894b4ed70d9abbad5b4146510c7b579f92224da7b925e22bfb6d200b1fe73bd8016b46cd9d4d980fe6531a69f06a4fabbcb8b36b6867e3270cfe267a7bbbf57b00bedf5893b82f509d6f5b960d65c94b2efa5fb4ef82a8afaed302df5bb534f5a28407f206fbbae42fbbe6038c1bc1d095c15b5cf771499d45111ff8255ccdfadf46b19df45b55d11cb6a8d56f2bb2cfda8040ef452f06919fd034842bf9b1af481301b7c32237e9ce74f7aee762eade21033cd9445a13d84546a7bc8ce1dc9c2fbd99afc3cb09e47a17b365d52ac984ab584349c539bacc7d14a87f2a48d72319b0f95684dda564b9f116d5a1d3e076fe50ac6dd62553572cf6865866f0f8427553c3d39d082ddcfefda551a3bc0477d5d98e7752fe0a7714e2ca3c1175198b86eddfab41643bee1d826e45d9fe07a703b0cd3f0a81ebfbd26a824a183b5286f31611e20a73b03e72235a1a851dc907415ba3d1150113881f9a6106647af0f0ae6e804b04852490352f38b846a1ef174d0d9bac46850d5c1db5ab6a3b81f04c3ee9bf541180fab393bfbf707039856e2bb886456b8ad31c334453dcdf435fe12549fae7c4f8a62168205cd8394a030a70e41d77f54913b01297130c0391699f6a52bcf9ff1bf16f3aba620d6ef95091d74b56d8a5ba180332675e099ab34cb7033f0403e0c27e52e685e1bb82a96eabd551ff6dc72484ccf0deb8d306eb31ab54cefc63c3598cf1b62990bacc8837375c19b989fadfe004dcc7c4c250fc4e4546a112f027a21aabcfee09a71fb76048478ce3c8fad458d8bbfa9d19b9d455d2e92fa42cf211da123ba195559d6bf639f82ce7581f89ffcace981903a403c51c5c50389a97aa50719be321600a21d0e072f25d896ff183ffd77fc1ebb20cc254b0f2796a1a9489b48fc417910a89d1ee234c8cdb981bab840d68833ace915c8ac5e616d1aac21a29660c527eb88cbf0c508b39d51ff6afccefb6fa213ad5cd2009ee887a6bc9be9213bf11dc299900ad0bc54455c24b1ebe722f3932b7a93e97a94e21eeec79d3041865b23c55f21939264a334920b401aa5070b63e50cb9fd03321070efdc482a23eea0410298825b51cdc6418d6587b317bfe966343036de576e4f661fb897ca36a930d2bc765cb374657a8856c2c77dbcb6de8d0917888ec6ecd11496fa539b1a929105546a5d057e816023cd16c0340bc87f562f393d755517e556c0abe44b8a95b70b37640afa934a5544c049cb2a7829ce7f2a7591853a59d57ca07924c29479c05b950f997a28926103a2127636f6ca00e25c35bda4afadf9cd3ab6bbd23ad6f666f506143298e4ab45beb9d1954e215afc002313cd878a600dbd5c55f96388cfce0b0033abd02395c754c457ccf2f2520f462767d113ec54478723471aba24bbc6cbbde780d6932d77402e9f93389956ccd1968742a9edd42f5a0e14bc9fb8149ae186906789e5d08f299b7906526bfbb133c1056cb408d4987a247859da20371b455f9972f08cfb2d9942d110121edf0bc9edf09cd8354200f0652804150ad4b424ff7b4c8781ddb96276</script>
-</div>
-<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+        <h4 id="我很疑惑为什么你会打开一只猫的博客？？？？？"><a href="#我很疑惑为什么你会打开一只猫的博客？？？？？" class="headerlink" title="我很疑惑为什么你会打开一只猫的博客？？？？？"></a>我很疑惑为什么你会打开一只猫的博客？？？？？</h4><img src="/images/cat.PNG">
+<a id="more"></a>
+
+<h3 id="1-一些零碎的快捷链接"><a href="#1-一些零碎的快捷链接" class="headerlink" title="1.一些零碎的快捷链接"></a>1.一些零碎的快捷链接</h3><p><a href="https://i.csdn.net/#/uc/collection-list" target="_blank" rel="noopener">CSDN收藏</a><br><a href="https://fanyi.baidu.com/" target="_blank" rel="noopener">百度翻译</a><br><a href="https://www.cnki.net/" target="_blank" rel="noopener">知网</a><br><a href="https://npupt.com/index.php" target="_blank" rel="noopener">蒲公英</a><br><a href="http://bt.neu6.edu.cn/forum.php" target="_blank" rel="noopener">六维空间</a></p>
+<h3 id="2-学习视频"><a href="#2-学习视频" class="headerlink" title="2.学习视频"></a>2.学习视频</h3><p><a href="https://www.bilibili.com/video/av9876107?p=7" target="_blank" rel="noopener">B站计算机网络学习视频</a><br><a href="https://www.icourse163.org/spoc/university/SZU?_trace_c_p_k2_=756636cae1f8492086b202dac30ee416#/c" target="_blank" rel="noopener">中国大学mooc</a><br><a href="http://szu.fanya.chaoxing.com/portal" target="_blank" rel="noopener">学习通</a><br><a href="http://www.uooc.net.cn/home/learn/index#/1041004417/556531699/1001636458" target="_blank" rel="noopener">无处不在传染病</a></p>
+<h3 id="3-校园网络相关"><a href="#3-校园网络相关" class="headerlink" title="3.校园网络相关"></a>3.校园网络相关</h3><p><a href="https://wvpn.szu.edu.cn/" target="_blank" rel="noopener">内部网网页</a><br><a href="http://172.30.255.2/0.htm" target="_blank" rel="noopener">宿舍上网登录</a><br><a href="https://drcom.szu.edu.cn/" target="_blank" rel="noopener">校园WiFi登录</a><br><a href="http://172.30.255.2/1.htm" target="_blank" rel="noopener">内部网上网信息窗</a><br><a href="http://ceie.szu.edu.cn/szucie/" target="_blank" rel="noopener">信息工程学院</a></p>
+
       
 
       
