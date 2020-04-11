@@ -6,16 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>胡同学的博客</title>
+  <title>直接插入排序 | 胡同学的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="胡同学的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="直接插入排序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="直接插入排序">
+<meta property="og:url" content="http://yoursite.com/2020/04/11/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="胡同学的博客">
+<meta property="og:description" content="直接插入排序">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png">
+<meta property="og:image" content="http://yoursite.com/images/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E6%80%A7%E8%83%BD.JPG">
+<meta property="og:image" content="http://yoursite.com/images/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E6%80%A7%E8%83%BD.PNG">
+<meta property="og:image" content="http://yoursite.com/images/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C1.PNG">
+<meta property="article:published_time" content="2020-04-11T08:01:49.000Z">
+<meta property="article:modified_time" content="2020-04-11T08:36:53.210Z">
 <meta property="article:author" content="胡同学">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png">
   
     <link rel="alternative" href="/atom.xml" title="胡同学的博客" type="application/atom+xml">
   
@@ -129,22 +138,25 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-直接插入排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-直接插入排序" class="article article-type-post " itemscope itemprop="blogPost">
  
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/11/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">直接插入排序</a>
+    <h1 class="article-title" itemprop="name">
+      直接插入排序
     </h1>
   
 
         
         
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/04/11/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" class="archive-article-date">
   	<time datetime="2020-04-11T08:01:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
 </a>
@@ -153,10 +165,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3>
-        
-          <a class="article-more-a" href="/2020/04/11/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/#more">more >></a>
-        
+        <h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><a id="more"></a>
+<p><font size=4 ><b>1.概念：</b></font><br>插入排序的主要操作是插入，其基本思想是：每次将一个待排序的记录按其关键字的大小插入到一个已经排好序的有序序列中，直到全部记录排好序为止。<br><img src="/images/插入排序.png" width="50%" height="50%"><br><font size=4 ><b>2.算法性能：</b></font><br><img src="/images/插入排序性能.JPG" width="50%" height="50%"><br><img src="/images/插入排序性能.PNG" width="50%" height="50%"><br><font color=green><b>如果序列基本有序，使用插入排序就简单而且高效</b></font><br><font size=4 ><b>3.C++程序示例：</b></font></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">int InsertSort(int A[], int n);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int A[10] = &#123; 11,24,16,87,45,6,93,66,74,38 &#125;;</span><br><span class="line">    InsertSort(A, 10);</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line">int InsertSort(int A[], int n)</span><br><span class="line">&#123;</span><br><span class="line">	int i, j, k, temp;</span><br><span class="line">	<span class="keyword">for</span>(i=1; i&lt;n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(A[i] &lt; A[i-1])</span><br><span class="line">		&#123;</span><br><span class="line">			temp = A[i];</span><br><span class="line">			<span class="keyword">for</span>(j=i-1; A[j]&gt;temp &amp;&amp; j&gt;=0; j--)</span><br><span class="line">			&#123;</span><br><span class="line">				A[j+1] = A[j];</span><br><span class="line">			&#125;</span><br><span class="line">			A[j+1] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(k=0; k&lt;n; k++)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; A[k] &lt;&lt; <span class="string">" "</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl &lt;&lt; <span class="string">"排序结果："</span> ;</span><br><span class="line">    <span class="keyword">for</span>(k=0; k&lt;n; k++)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; A[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="/images/运行结果1.PNG" width="50%" height="50%"></p>
+
       
 
       
@@ -167,16 +180,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/11/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/11/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/11/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构排序--冒泡排序</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -196,347 +268,17 @@
 
 
 
-	
   
-    <article id="post-冒泡排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
- 
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/11/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">数据结构排序--冒泡排序</a>
-    </h1>
   
 
-        
-        
-<a href="/2020/04/11/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2020-04-11T06:57:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
-</a>
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="排序算法之冒泡排序"><a href="#排序算法之冒泡排序" class="headerlink" title="排序算法之冒泡排序"></a>排序算法之冒泡排序</h3>
-        
-          <a class="article-more-a" href="/2020/04/11/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/#more">more >></a>
-        
-      
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+  
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/11/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
+  
 
 	
-  
-    <article id="post-hexo admin常用编辑命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
- 
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/04/hexo%20admin%E5%B8%B8%E7%94%A8%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4/">hexo admin字体和图片的设置(持续更新)</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/04/04/hexo%20admin%E5%B8%B8%E7%94%A8%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-04-04T13:04:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="字体相关设置"><a href="#字体相关设置" class="headerlink" title="字体相关设置"></a>字体相关设置</h3><p>1.设置字体，格式如下：</p>
-        
-          <a class="article-more-a" href="/2020/04/04/hexo%20admin%E5%B8%B8%E7%94%A8%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/04/hexo%20admin%E5%B8%B8%E7%94%A8%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-	
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
- 
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/04/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/04/04/hello-world/" class="archive-article-date">
-  	<time datetime="2020-04-04T03:39:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
-        
-          <a class="article-more-a" href="/2020/04/04/hello-world/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/04/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-	
-  
-    <article id="post-如何搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
- 
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">如何搭建个人博客</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/04/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-04-03T13:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="利用hexo搭建博客步骤"><a href="#利用hexo搭建博客步骤" class="headerlink" title="利用hexo搭建博客步骤"></a>利用hexo搭建博客步骤</h3><img src="/images/cat.PNG">
-        
-          <a class="article-more-a" href="/2020/04/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-	
-  
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
- 
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-04-03T03:47:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        提示:查看内容需要输入正确密码！
-        
-          <a class="article-more-a" href="/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-	
-  
-  
-
-
           </div>
         </div>
       </div>
@@ -568,8 +310,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
