@@ -131,6 +131,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-冒泡排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+ 
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/11/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">数据结构排序--冒泡排序</a>
+    </h1>
+  
+
+        
+        
+<a href="/2020/04/11/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" class="archive-article-date">
+  	<time datetime="2020-04-11T06:57:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
+</a>
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="排序算法之冒泡排序"><a href="#排序算法之冒泡排序" class="headerlink" title="排序算法之冒泡排序"></a>排序算法之冒泡排序</h3><p><font size=4 ><b>1.概念：</b></font><br><font size=3>将待排序的数据看作是竖着排列的“气泡”，关键字较小的记录比较轻，从而要往上浮。对这个“气泡”序列进行n-1趟处理。所谓一趟处理，就是自上而下检查一遍这个序列，依次比较相邻两个记录的关键字，如果发生逆序，即 “轻”的记录在下面，就交换它们的位置。<br><img src="/images/maopao.JPG" width="50%" height="50%"><br>第一趟排序之后，关键字最大的记录就被交换到最后一个位置；<br>第二趟排序之后，关键字次大的记录就被交换到最后第二个位置；<br>…<br>关键字小的记录不断上浮（起泡），关键字大的记录不断下沉。<br>在作第二趟排序时，由于最后一个位置上的记录已是最大的，所以不必检查；<br>因此第i趟起泡排序一般是从1到n-i+1。</font></p>
+<p><font size=4 ><b>2.算法性能：</b></font><br><img src="/images/maopao2.JPG" width="50%" height="50%"></p>
+<p><font size=4 ><b>3.C++程序示例：</b></font></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">int BubbleSort(int A[], int n)</span><br><span class="line">&#123;</span><br><span class="line">    bool flag = <span class="literal">true</span>;	//标志位，用于记录每次排序是否有元素位置交换</span><br><span class="line">    //如果没有设置标志位，可能在排好序后程序还傻傻地继续循环下去直至条件不满足然后退出</span><br><span class="line">    int i, j, k,temp;</span><br><span class="line">    <span class="keyword">for</span> (i = 0; i &lt; n - 1; i++)</span><br><span class="line">    &#123;//一趟冒泡</span><br><span class="line">        flag = <span class="literal">false</span>;	//每次排序前把标志位复位</span><br><span class="line">        <span class="keyword">for</span> (j = n - 1; j &gt; i; j--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (A[j - 1] &gt; A[j])</span><br><span class="line">            &#123;</span><br><span class="line">                flag = <span class="literal">true</span>;    // 发生位置交换，标志位置位</span><br><span class="line">                temp = A[j];</span><br><span class="line">                A[j] = A[j - 1];</span><br><span class="line">                A[j - 1] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag == <span class="literal">false</span>) <span class="built_in">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (int a = 0;a &lt; n;a++)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; A[a] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="string">"排序后结果："</span> ;</span><br><span class="line">    <span class="keyword">for</span>(k=0; k&lt;n; k++)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; A[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int A[10] = &#123; 11,16,24,87,45,6,93,66,74,38 &#125;;</span><br><span class="line">    BubbleSort(A, 10);</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="/images/maopaojieguo.JPG" width="50%" height="50%"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/11/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+	
+  
     <article id="post-hexo admin常用编辑命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
  
   <div class="article-inner">
@@ -355,7 +424,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        Welcome to my blog, enter password to read.
+        提示:查看内容需要输入正确密码！
         
           <a class="article-more-a" href="/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/#more">more >></a>
         
