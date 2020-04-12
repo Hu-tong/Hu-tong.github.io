@@ -6,22 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>如何搭建个人博客 | 胡同学的博客</title>
+  <title>希尔排序 | 胡同学的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="利用hexo搭建博客步骤">
+  <meta name="description" content="1.概念：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何搭建个人博客">
-<meta property="og:url" content="http://yoursite.com/2020/04/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="希尔排序">
+<meta property="og:url" content="http://yoursite.com/2020/04/12/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="胡同学的博客">
-<meta property="og:description" content="利用hexo搭建博客步骤">
+<meta property="og:description" content="1.概念：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/images/cat.PNG">
-<meta property="article:published_time" content="2020-04-03T13:00:00.000Z">
-<meta property="article:modified_time" content="2020-04-04T03:30:17.762Z">
+<meta property="og:image" content="http://yoursite.com/images/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.PNG">
+<meta property="og:image" content="http://yoursite.com/images/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C3.PNG">
+<meta property="article:published_time" content="2020-04-12T05:45:23.000Z">
+<meta property="article:modified_time" content="2020-04-12T07:21:03.790Z">
 <meta property="article:author" content="胡同学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/cat.PNG">
+<meta name="twitter:image" content="http://yoursite.com/images/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.PNG">
   
     <link rel="alternative" href="/atom.xml" title="胡同学的博客" type="application/atom+xml">
   
@@ -135,7 +136,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-如何搭建博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-希尔排序" class="article article-type-post " itemscope itemprop="blogPost">
  
   <div class="article-inner">
     
@@ -143,7 +144,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      如何搭建个人博客
+      希尔排序
     </h1>
   
 
@@ -154,59 +155,22 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/04/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-04-03T13:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
+<a href="/2020/04/12/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" class="archive-article-date">
+  	<time datetime="2020-04-12T05:45:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
 </a>
 		
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="利用hexo搭建博客步骤"><a href="#利用hexo搭建博客步骤" class="headerlink" title="利用hexo搭建博客步骤"></a>利用hexo搭建博客步骤</h3><img src="/images/cat.PNG">
+        <p><font size=4 ><b>1.概念：</b></font></p>
 <a id="more"></a>
-
-<p><font color=gray size=4>奇怪的知识增加了！</font></p>
-<h4 id="一、准备"><a href="#一、准备" class="headerlink" title="一、准备"></a>一、准备</h4><p>1.首先要注册github账号并配置好Git</p>
-<p><a href="https://blog.csdn.net/qq_41782425/article/details/85183250" target="_blank" rel="noopener">Git及GitHub使用教程</a></p>
-<p>2.下载Nodejs并安装</p>
-<p>打开下方链接，下载LTS的，一直点Next，除了改安装目录外，其他按照默认的就可以。</p>
-<p><a href="https://nodejs.org" target="_blank" rel="noopener">Windows版本Nodejs下载地址</a></p>
-<p>3.检查是否安装成功</p>
-<p>以管理员身份打开命令行窗口(cmd)，依次输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<p>若可以正常出现版本号，证明安装成功了！(如果这里出现了问题那就从头开始吧…)<br>4.下载一个文本编辑器(如果你能接收记事本的界面可以忽略这一步)<br>我使用的是Notespad++<br><a href="https://notepad-plus-plus.org/downloads/" target="_blank" rel="noopener">Notepad++下载地址</a></p>
-<h4 id="二、开始搭建博客"><a href="#二、开始搭建博客" class="headerlink" title="二、开始搭建博客"></a>二、开始搭建博客</h4><p>1.在命令行窗口中输入以下命令安装cnpm工具：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<p>2.安装hexo工具，在命令行窗口中继续输入以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>安装完后可以验证一下是否成功，继续输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-<p>能够正常出现版本信息就成功了！(如果失败，请重新安装…)<br>3.新建blog文件夹,可以直接去硬盘中创建，也可以用命令行，这里用命令行演示(由于在本人电脑Windows的命令行窗口中在后续的步骤曾经出错过，所以接下来使用的命令行窗口是我们在准备阶段安装好的Git工具”Git Bash”)<br>1)在Git Bash命令行窗口中打开你想创建blog文件夹的目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">比如打开E盘：	<span class="built_in">cd</span> /E</span><br></pre></td></tr></table></figure>
-<p>2)使用命令行创建blog文件夹：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line">这里的blog是文件夹名，可以自己更改</span><br></pre></td></tr></table></figure>
-<p>创建完了可以去对应目录下看看有没有(如果搭建博客过程出错，大不了删除这个blog文件夹然后重来)<br>3)使用hexo来初始化blog</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">先进入我们创建的blog文件夹：</span><br><span class="line"><span class="built_in">cd</span> blog/</span><br><span class="line">再使用hexo初始化：</span><br><span class="line">hexo init</span><br><span class="line">完了之后去blog文件夹下检查是否有生成了一堆东西</span><br></pre></td></tr></table></figure>
-<p>4)启动搭建好的博客，在命令行窗口中继续输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>然后会生成一个地址:<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a><br>在浏览器中打开可以看到已经初始化的博客</p>
-<h4 id="三、创建自己的第一篇博客"><a href="#三、创建自己的第一篇博客" class="headerlink" title="三、创建自己的第一篇博客"></a>三、创建自己的第一篇博客</h4><p>1.Ctrl+c退出博客运行后，输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">"博客的标题"</span></span><br></pre></td></tr></table></figure>
-<p>检查在目录下是否生成了文章：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="built_in">source</span>/_posts/</span><br></pre></td></tr></table></figure>
-<p>2.对博客(.md格式)进行编辑<br>可以使用文本编辑器，如Notepad++；推荐使用<b><font color=green>Hexo admin</font></b>插件实时编辑：<br>如果有进入到“source/_posts/”目录下，记得退回到blog目录，退回目录为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ../..</span><br><span class="line">注意：这个命令是退出两层，如果是一层：<span class="built_in">cd</span> ..就好</span><br><span class="line">在命令行窗口输入：</span><br><span class="line">cnpm install --save hexo-admin</span><br></pre></td></tr></table></figure>
-<p>安装成功后，就可以打开 <a href="http://localhost:4000/admin/" target="_blank" rel="noopener">http://localhost:4000/admin/</a> 访问到hexo-admin管理页面了</p>
-<p>3.创建完博客后，更新内容到<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a><br>依次输入(其实直接到浏览器页面直接刷新也可以)：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">清理命令：</span><br><span class="line">hexo clean</span><br><span class="line">生成命令：</span><br><span class="line">hexo g</span><br><span class="line">运行博客命令：</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p><font color=Green size=4>到目前为止，博客搭建的基本操作就完成了，接下来介绍怎么把我们的博客部署到GitHub上</font></p>
-<h4 id="四、把hexo搭建的博客部署到GitHub上"><a href="#四、把hexo搭建的博客部署到GitHub上" class="headerlink" title="四、把hexo搭建的博客部署到GitHub上"></a>四、把hexo搭建的博客部署到GitHub上</h4><p>1.打开github网站，新建一个Repository，”Repository name”必须是这种格式：<b>“你的Github账户名.github.io”</b>，以后在浏览器输入”你的Github账户名.github.io”就可以访问博客了<br>2.回到命令行窗口，在blog目录下安装一个git部署插件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-<p>3.打开blog文件夹，编辑<b>“_config.yml”</b>文件(可以用文本编辑器Notepad++)<br>拉到文件夹最底部，修改如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: <span class="string">'git'</span></span><br><span class="line">  repo: 这里的地址就是你刚刚创建的仓库的地址，即：https://github.com/你的Github名/你的Github名.github.io.git 这种格式</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p><font color=red size=4>注意！！！这里的type和repo、branch后面都有一个空格的！！！</font><br>4.最后一步！！！<br>部署到远端：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>这里可能会跳出来窗口让你输入你的GitHub名和密码。<br>回到你的GitHub仓库，刚刚创建的空仓库会多了很多东西。<br>以后访问博客就可以在浏览器输入”你的Github账户名.github.io”进行访问了！！！<br><font color=green size=4>完结撒花！！！</font></p>
+<p><font color=gray>希尔排序是对直接插入排序的改进，改进的着眼点：<br>1）若待排序记录按关键字值基本有序时，直接插入排序的效率可以大大提高；<br>2）由于直接插入排序算法简单，则在待排序记录数量n较小时效率也很高。<br>希尔排序的基本思想：<br>将整个待排序记录分割成若干个子序列，在子序列内分别进行直接插入排序，待整个序列中的记录基本有序时，对全体记录进行直接插入排序。</font></p>
+<p><font size=4 ><b>2.实现：</b></font><br><font color=gray>首先选择一个整数gap &lt; n(待排序的记录数)作为间隔，将全部序列分为若干个子序列，所有距离为gap的记录放在同一个子序列中；在每个子序列内分别进行直接插入排序；然后缩小间隔gap，例如取gap=gap/2(gap=gap/3+1)；重复上述的子序列划分和排序工作，直到最后取gap=1，将所有记录放在同一个序列中排序为止。</font><br><img src="/images/希尔排序.PNG" width="50%" height="50%"></p>
+<p><font size=4 ><b>3.算法性能：</b></font><br><font color=gray>希尔排序开始时增量较大，每个子序列中的记录个数较少，从而排序速度较快；当增量逐渐变小时，虽然每个子序列中记录个数逐渐变多，但整个序列已基本有序，排序速度也较快。<br>希尔排序的时间性能是所取增量的函数，而到目前为止尚未有人求得一种最好的增量序列。<br>  研究表明，当n在某个特定范围内，希尔排序所需的比较次数和记录的移动次数约为n的1.3次方；当n趋于无穷时可减少到n（log2n）的2次方。<b>希尔排序是一种不稳定的排序方法</b></font></p>
+<p><font size=4 ><b>4.C++程序示例：</b></font></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">int SheerSort(int A[], int n);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int A[10] = &#123; 11,24,16,87,45,6,93,66,74,38 &#125;;</span><br><span class="line">    SheerSort(A, 10);</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line">int count1=0, count2=0;</span><br><span class="line">int SheerSort(int A[], int n)</span><br><span class="line">&#123;</span><br><span class="line">    int i, j, k, temp;</span><br><span class="line">    int gap = n;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        gap =gap/3+1;</span><br><span class="line">        count1++;</span><br><span class="line">        <span class="keyword">for</span>( i=gap; i&lt;n; i++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(A[i] &lt; A[i-gap])</span><br><span class="line">            &#123;</span><br><span class="line">                temp = A[i];</span><br><span class="line">                <span class="keyword">for</span>(j=i-gap; A[j]&gt;temp &amp;&amp; j&gt;=0; j-=gap)</span><br><span class="line">                &#123;</span><br><span class="line">                    count2++;</span><br><span class="line">                    A[j+gap] = A[j];</span><br><span class="line">                &#125;</span><br><span class="line">                A[j+gap] = temp;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(k=0; k&lt;n; k++)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; A[k] &lt;&lt; <span class="string">" "</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    &#125;<span class="keyword">while</span>(gap &gt; 1);</span><br><span class="line">    cout &lt;&lt; endl &lt;&lt; <span class="string">"一共跑了"</span> &lt;&lt; count1 &lt;&lt; <span class="string">"趟，移动了"</span> &lt;&lt; count2 &lt;&lt; <span class="string">"次！"</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; endl &lt;&lt; <span class="string">"排序结果："</span> ;</span><br><span class="line">    <span class="keyword">for</span>(k=0; k&lt;n; k++)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; A[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="/images/运行结果3.PNG" width="50%" height="50%"></p>
 
       
 
@@ -265,7 +229,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/12/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,18 +243,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/04/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我的第一篇博客文章</div>
+    <a href="/2020/04/11/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">选择排序</div>
       <i class="icon-circle-right"></i>
     </a>
   
