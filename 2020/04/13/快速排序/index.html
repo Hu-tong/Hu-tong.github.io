@@ -136,139 +136,159 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> <%if(index){%> article-index<%}%>" itemscope itemprop="blogPost">
+            <article id="post-快速排序" class="article article-type-post " itemscope itemprop="blogPost">
  
   <div class="article-inner">
-    <% if (post.link || post.title){ %>
+    
       <header class="article-header">
-        <%- partial('post/title', {class_name: 'article-title'}) %>
-        <% if (!post.noDate){ %>
-        <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
-        <% } %>
-      </header>
-    <% } %>
-    <div class="article-entry" itemprop="articleBody">
-      <% if (post.excerpt && index){ %>
-        <%- post.excerpt %>
-        <% if (theme.excerpt_link) { %>
-          <a class="article-more-a" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
-        <% } %>
-      <% } else { %>
-        <%- post.content %>
-      <% } %>
+        
+  
+    <h1 class="article-title" itemprop="name">
+      快速排序
+    </h1>
+  
 
-      <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i><%= theme.reward_wording%><i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    <% if(theme.alipay) {%>
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="<%= theme.alipay%>">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    <% } %>
-                    <% if(theme.weixin) {%>
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="<%= theme.weixin%>">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    <% } %>
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      <% } %>
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/04/13/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="archive-article-date">
+  	<time datetime="2020-04-13T13:59:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+</a>
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em>快速排序可以说是冒泡排序的升级版</em></strong></p>
+<a id="more"></a>
+<p><font size=4 ><b>1.基本思想：</b></font><br><font color=gray>采用的是分治策略(一般与递归(套娃)结合使用)，以减少排序过程中的比较次数。<br>任取待排序记录序列中的某个记录（例如取第一个记录）作为基准（枢），按照该记录的关键字大小，将整个记录序列划分为左右两个子序列:<br>左侧子序列中所有记录的关键字都小于或等于基准记录的关键字<br>右侧子序列中所有记录的关键字都大于基准记录的关键字</font><br><font size=4 ><b>图示：</b></font><br><img src="/images/快速排序.PNG" width="70%" height="70%"></p>
+<img src="/images/快速排序2.PNG" width="60%" height="60%">
+
+<p><font size=4><b>2.算法：</b></font><br><font color=gray>1、取序列第一个记录为枢轴记录，其关键字为Pivotkey；指针low指向序列第一个记录位置(low=1)，指针high指向序列最后一个记录位置(High=SeqList. Len)<br>2、从high指向的记录开始，向前找到第一个关键字的值小于Pivotkey的记录，将其放到low指向的位置，low++<br>3、从low指向的记录开始，向后找到第一个关键字的值大于Pivotkey的记录，将其放到high指向的位置，high–<br>4、重复2、3 ,直到low == high ,将枢轴记录放在low(high)指向的位置</font></p>
+<p><font size=4><b>3.算法性能：</b></font><br><font color=gray>平均时间复杂度为O(nlog<font size=1>2</font>n)，最坏复杂度是O(n2)，就平均计算时间而言，快速排序是所有内排序方法中最好的一个，但是快速排序是一种不稳定的排序方法。</font></p>
+<p><font size=4><b>4.C++程序实现：</b></font></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">const int Max = 100;</span><br><span class="line">struct List&#123;</span><br><span class="line">    int str[Max];</span><br><span class="line">    int Len;</span><br><span class="line">&#125;;</span><br><span class="line">List L;</span><br><span class="line"></span><br><span class="line">void QuickSort(int low, int high);</span><br><span class="line">void Print();</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int k;</span><br><span class="line">    cout &lt;&lt; <span class="string">"请输入序列的长度："</span>;</span><br><span class="line">    cin &gt;&gt; L.Len;</span><br><span class="line">    cout &lt;&lt; <span class="string">"请输入序列内容："</span>;</span><br><span class="line">    <span class="keyword">for</span>(k=0; k &lt; L.Len; k++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; L.str[k];</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="string">"排序前的序列："</span>;</span><br><span class="line">    Print();</span><br><span class="line">    QuickSort(0, L.Len-1);  //这里用L.Len-1而不是L.Len,因为从0~L.Len有(Len+1)个元素了</span><br><span class="line">    cout &lt;&lt; <span class="string">"快速排序后的结果："</span>;</span><br><span class="line">    Print();</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line">//快速排序函数(核心部分)</span><br><span class="line">void QuickSort(int low, int high)</span><br><span class="line">&#123;</span><br><span class="line">    int i = low, j = high;	    //记录数组的头尾</span><br><span class="line">    int Pivotkey = L.str[low];  //取序列第一个记录为枢轴记录</span><br><span class="line">    //下面这个<span class="keyword">while</span>执行一次就把小于Pivotkey的数放在它左边，大于的放在右边</span><br><span class="line">    <span class="keyword">while</span>(high &gt; low)&#123;</span><br><span class="line">        //从high指向的位置向前找到值小于Pivotkey的元素才退出循环，然后将其放到low指向的位置</span><br><span class="line">        <span class="keyword">while</span>(low&lt;high &amp;&amp; L.str[high] &gt;= Pivotkey)&#123;</span><br><span class="line">            high--;</span><br><span class="line">        &#125;L.str[low] = L.str[high];  //这里的L.str[low]的值不用担心被覆盖，因为在前面的Pivotkey已经保存了这个值</span><br><span class="line">        //从low指向的位置向前找到值大于Pivotkey的元素才退出循环，然后将其放到high指向的位置</span><br><span class="line">        <span class="keyword">while</span>(low&lt;high &amp;&amp; L.str[low] &lt;= Pivotkey)&#123;</span><br><span class="line">            low++;</span><br><span class="line">        &#125;L.str[high] = L.str[low];</span><br><span class="line">    &#125;</span><br><span class="line">    L.str[low] = Pivotkey;	//此时low = high</span><br><span class="line">    //对子序列数组进行递归快速排序</span><br><span class="line">    <span class="keyword">if</span>(i &lt; low-1) QuickSort(i, low-1);      //对枢轴记录左边的序列做快速排序</span><br><span class="line">    <span class="keyword">if</span>(j &gt; high+1) QuickSort(high+1, j);    //对枢轴记录右边的序列做快速排序</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//打印函数</span><br><span class="line">void Print()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    <span class="keyword">for</span>(i=0; i &lt; L.Len; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; L.str[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
     </div>
     <div class="article-info article-info-index">
-      <%if(post.top){%>
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
-      <% } %>
-      <%- partial('post/tag') %>
-      <%- partial('post/category') %>
-      <% if (index && theme.show_all_link){ %>
-        <p class="article-more-link">
-          <a class="article-more-a" href="<%- url_for(post.path) %>"><%= theme.show_all_link %> >></a>
-        </p>
-      <% } %>
+      
+      
+      
 
-      <% if (!index && theme.share_jia){ %>
-        <%- partial('post/share') %>
-      <% } %>
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/13/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-<% if (!index){ %>
-  <%- partial('post/nav') %>
-<% } %>
-<%- partial('_partial/aside') %>
 
-
-<% if (!index && post.comments){ %>
-  <% if (theme.duoshuo){ %>
-  <%- partial('post/duoshuo', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
-  <% } %>
   
-  <% if (theme.wangyiyun){ %>
-  <%- partial('post/wangyiyun', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
-  <% } %>
+<nav id="article-nav">
+  
+    <a href="/2020/04/16/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          归并排序
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/12/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">希尔排序</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-  <% if (theme.changyan_appid && theme.changyan_conf){ %>
-  <%- partial('post/changyan', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
-  <% } %>
 
-  <% if (theme.disqus || config.disqus_shortname){ %>
-    <section id="comments">
-      <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = '<%= theme.disqus || config.disqus_shortname %>'; // required: replace example with your forum shortname
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
 
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
-    </section>
-  <% } %>
 
-  <% if (theme.gitment_owner && theme.gitment_repo &&theme.gitment_oauth && theme.gitment_oauth.client_id && theme.gitment_oauth.client_secret){ %>
-  <%- partial('post/gitment', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
-  <% } %>
-<% } %>
+
+  
+  
+  
+
+  
+
+  
+
+  
+
 	
           </div>
         </div>

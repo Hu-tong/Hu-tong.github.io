@@ -133,139 +133,154 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> <%if(index){%> article-index<%}%>" itemscope itemprop="blogPost">
+            <article id="post-我的第一篇博客文章" class="article article-type-post " itemscope itemprop="blogPost">
  
   <div class="article-inner">
-    <% if (post.link || post.title){ %>
+    
       <header class="article-header">
-        <%- partial('post/title', {class_name: 'article-title'}) %>
-        <% if (!post.noDate){ %>
-        <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
-        <% } %>
-      </header>
-    <% } %>
-    <div class="article-entry" itemprop="articleBody">
-      <% if (post.excerpt && index){ %>
-        <%- post.excerpt %>
-        <% if (theme.excerpt_link) { %>
-          <a class="article-more-a" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
-        <% } %>
-      <% } else { %>
-        <%- post.content %>
-      <% } %>
+        
+  
+    <h1 class="article-title" itemprop="name">
+      我的第一篇博客文章
+    </h1>
+  
 
-      <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i><%= theme.reward_wording%><i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    <% if(theme.alipay) {%>
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="<%= theme.alipay%>">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    <% } %>
-                    <% if(theme.weixin) {%>
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="<%= theme.weixin%>">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    <% } %>
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      <% } %>
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
+  	<time datetime="2020-04-03T03:47:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
+</a>
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">Welcome to my blog, enter password to read.</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="7ed41121d5f04d36b9b508c438090b64424ae449bfe72a7771985d958777ecf8">edc92cc10d3ad054b3471d2300cfa3398cfe3ca0352374e77d9ea9f8c8aa9177279e36ea708541f959578e39cd2354f53e1f18fb8c274940c76c88a0bb04f7e03555bab73894b58382aff7d55db8dec92bf5bd76d1acb0a464d3a5a2005243a550e50772964a9f957d75d5878597c4068ca44847315235eeb211b1b6d95fa52e428470346f83c012cfa118c52757e5ef3ad37ead0463c8ad05b596b669c6907f0d30788649a09300f05f670d05665ef715382eb5858dd790673a546e15f576764018ab862d3626d51b7a623e63011d47ebd0eff86749f729c39561b0f8d415503bbe41fb89c4328b3d9d41abcff62de253012090ae1c8c610b23d3bcbaec9a8ca52e551fe84ea112c5d079d61c2cec9279e9e60714bfc069a85e47e9beb97c0ef08f6cdf14ccec179417182132dc0ea544ebd76bd24b1b75ec3ac8b1fc487eab3fc78ae405bbe1c25945efacc4e588981da40eecee2b53876e7b418447b7af520fc50682c1840a86c431f05beedc24dd678b6a992000f851269c160cc215c6bbecc165a137df764bd04637a8212c9da9a93614b28d7b33fdbb9f6cd3c2b2fba9bed307c540676c10e5404a9ee67f8ee894f800f57d30dd5511bc513cb2b7d485cf9da108e4465a7296fdceacb5230830abfb70e3769b36588da70f82e467f8723b417bd568b81679339b4144b914d1e156d0aca8fdebb9846bab72879921e802651e660a30958de62b3cd20bf5be0541db8b8ec24fafd246cf422ad30336a752a7e6ba5cabb74275fe809f5089bd70fc270621534ffcc1f5e9ce253cefaf05cdd9de04017e83e3822ba25bf301f57c8438c3ea8f1f26d1201765cc04d04b24b7a2e8a976a4b2ff2e5c22f15efb7a071b34b37c1dd9a2640ec0b39b7e7994a0f25d3a1c27f0982aceb1270e9cb67e4b9bd50b1faf9b68540b930bbdca35e02440d353cb3531fb7fe22af801aa542c66ea9a76176260a6b9d1ab13cc211a7478e4f5cb9b650a970374fb1f843db260356cedb3d448c8b902d2c4405324e5129b215e9c1d79be79703a6a87a91c45fee4115641f25523b8c3855bfdd536aab8ee2d32357a64ef50cfd31a0293995bc518392f5d2a1dff8ba63179adce1f8749698c7c82463e00c0c08f083166665a860a5e4b55e7b9ccf833bd6366631e7b3bcd84742c115aebd3314ef334ad9f72b6d4b3717881f75fda20e07ba25ae8ea449698436f93422501a6d2ad7a2d2f27347058d686eb58b7ad1d5733d85b3845a09ddda1a6612bfffc09b723fe6639ea8f10bcec451d8439ef73829e32f9d78258c3042add215b3cba84fea33deb5a66dc805cf8dba88882df958d759603c0371074ee1c35f310298a2e2c22d9f79121bfcb76a9056fda22e4ff78cc5a8c449ded238cc00cff1946db99245796cf02fd5d5b01e3d4ca9d090e7fd53ddbcc3208a5861834303fd8bb3a1aae50c5c32d992a313e98430013fa1567353e1d5173f9e05536ded3fa0ed77579991c61f6a081b57912c00f049d88b247c21b9148ce345f2fb2c2c4ea592b6cab07630ca00d12912542a8b5851cd31785394c9eaf914a1a9f076e872f7e6638fb344ae68a66c68991440bc8b6af95c39bf0a87f1d00ea7262b5886341b1ec6ae631d0c0edfba7024e44080e8032db295aa2ac29b0e7fd0fb6c6cdeaccb1090a7e87ccd2c5f136a919e160c962f40ba600a0c4260d8e576cf0352670717806440a9a79412c60e37e7615b22c158e0d32c391e76e7e1aadc28ba0c67d67aa4cdf55327141d383b4ca2641f49644b6bbe9325945774f39e85151acb68f6f6c771037c7b748e5ff0b85a6d3a8afa293fb3a89c1c70d77e5bca730ac4d613150086d25d2f7b1f425b1e5d02932e242b6e75a9167eac6cc708df080048eeadbf10743182f23eaec2f6e5dde87d0023d14ef4282e6c6fe35653fb535d6469f76e5b2fb458ffc96e51242a6b5b56eb5c95525b9f9c632c31aed5a2048d3ef6c7ecadb304243dc36ed64c92ded2366216f6fb8a3597db0269780535538b45c6503cbb148ad69c4cd72c21c85d47b4ba36d702fddea70dabbc38d52f0a60f81091b2391647c3c3016538436e18d8f04435878a580c964c6d70d961fca3883cf1586e665b9a63f2ab27f7558cc0ee5059655dd714ecf01368126a83a5b952bde3a442e912a4e8c78ea698a98d8a16083903dd40bc80c7ad58a75a540e6c9e9e98ca73ba2885694b7d439c515f2fdc278bcb17f242f77fbbe7f12015f4b3e3717f79c0b2f0180448da6cff598b5b11e9f9488c0f246ac7eddad410f9c4f57041e485acfd862ecfc2c2598473c9d813182facd4980975dda5e9919eec813de72b2684f097d1535f26223a5af9d5c07bc13d33bff33adc53569331993b0f783f0a411eb86608056ba78b52c6124859afd86d347f781cd0f5f841da8cbad2863856fbfca627dcd1ee62edccd8a70cc31a00fc035688f3651f9fb4e60c18c861d626dd0ba4947b164f20917e3d4dfb0cfec1210fabe798bf8f0d9ffe133439563785c3b83d67d02e3c968a1346afead79c11f5b24073f069d003ff2df384ae987ec2e102b9717faf8019442ff9ff92cc2085868dc260be696b449bce354b64f652b2a374564189d5f13efb3d83039b2f6f506fc75d001e12baf24a9254f9c4d2ad003d4e2eac694b0b427cb71da78f38757dba5db0698e7c9240409aea3d889b5d1b8b79eabc83cda2c0affe5f844ea5afac8e0ffd99042b0736b82d3e13a1740f8dd9d872cebca3c4e44aaf2bcad4c9e04130d31130ee59c16774b47e13bbdf0d9fb244b6bdb65b1f563b16fd281d757a5db2f27ab455755a9955fa76d52a8e133055238870a38ac468c3911d4cd63a184324048e05e988eaa7fe2133946f52eef2ec2fab391fe6bc7b76ffed7fd1d76ff876f95d19c5b5de2a3d07b58e905b2e3132542f1921cd42fbb0f7f90568e51f78b013889a89b1dfd7754899a5632f9b2c0ce0b2d014c5589fe829ae83d3615518871e143be840b7ca369423a7ce038dd34fe64edd649860ca032051cf0fdf08e907db80587bcc3d7f49e431d283dced64bca779d5ef712d649a1a29ff736760951d92cfc17bf44fd9e963888579e25c5ed63bd0ef0e58f440b5bf2109b961a689293ccd157fce9a8468596f91e246c124434a3f17548725ea64b9d44347851b0</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+      
+
+      
     </div>
     <div class="article-info article-info-index">
-      <%if(post.top){%>
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
-      <% } %>
-      <%- partial('post/tag') %>
-      <%- partial('post/category') %>
-      <% if (index && theme.show_all_link){ %>
-        <p class="article-more-link">
-          <a class="article-more-a" href="<%- url_for(post.path) %>"><%= theme.show_all_link %> >></a>
-        </p>
-      <% } %>
+      
+      
+      
 
-      <% if (!index && theme.share_jia){ %>
-        <%- partial('post/share') %>
-      <% } %>
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-<% if (!index){ %>
-  <%- partial('post/nav') %>
-<% } %>
-<%- partial('_partial/aside') %>
 
-
-<% if (!index && post.comments){ %>
-  <% if (theme.duoshuo){ %>
-  <%- partial('post/duoshuo', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
-  <% } %>
   
-  <% if (theme.wangyiyun){ %>
-  <%- partial('post/wangyiyun', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
-  <% } %>
+<nav id="article-nav">
+  
+    <a href="/2020/04/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          如何搭建个人博客
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
-  <% if (theme.changyan_appid && theme.changyan_conf){ %>
-  <%- partial('post/changyan', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
-  <% } %>
 
-  <% if (theme.disqus || config.disqus_shortname){ %>
-    <section id="comments">
-      <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = '<%= theme.disqus || config.disqus_shortname %>'; // required: replace example with your forum shortname
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
 
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
-    </section>
-  <% } %>
 
-  <% if (theme.gitment_owner && theme.gitment_repo &&theme.gitment_oauth && theme.gitment_oauth.client_id && theme.gitment_oauth.client_secret){ %>
-  <%- partial('post/gitment', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
-  <% } %>
-<% } %>
+
+  
+  
+  
+
+  
+
+  
+
+  
+
 	
           </div>
         </div>
