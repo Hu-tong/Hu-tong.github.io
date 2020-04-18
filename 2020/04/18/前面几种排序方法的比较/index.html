@@ -6,23 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>选择排序 | 胡同学的博客</title>
+  <title>前面几种排序方法的比较 | 胡同学的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="1.概念：">
+  <meta name="description" content="目前共学习了：冒泡排序、直接插入排序、选择排序、希尔排序、快速排序、归并排序几种排序算法，下面比较一下它们的性能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="选择排序">
-<meta property="og:url" content="http://yoursite.com/2020/04/11/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:title" content="前面几种排序方法的比较">
+<meta property="og:url" content="http://yoursite.com/2020/04/18/%E5%89%8D%E9%9D%A2%E5%87%A0%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E7%9A%84%E6%AF%94%E8%BE%83/index.html">
 <meta property="og:site_name" content="胡同学的博客">
-<meta property="og:description" content="1.概念：">
+<meta property="og:description" content="目前共学习了：冒泡排序、直接插入排序、选择排序、希尔排序、快速排序、归并排序几种排序算法，下面比较一下它们的性能">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/images/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.png">
-<meta property="og:image" content="http://yoursite.com/images/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C2.PNG">
-<meta property="article:published_time" content="2020-04-11T14:12:15.000Z">
-<meta property="article:modified_time" content="2020-04-18T03:19:21.590Z">
+<meta property="og:image" content="http://yoursite.com/images/%E6%AF%94%E8%BE%83.PNG">
+<meta property="article:published_time" content="2020-04-18T02:39:30.000Z">
+<meta property="article:modified_time" content="2020-04-18T03:18:08.756Z">
 <meta property="article:author" content="胡同学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.png">
+<meta name="twitter:image" content="http://yoursite.com/images/%E6%AF%94%E8%BE%83.PNG">
   
     <link rel="alternative" href="/atom.xml" title="胡同学的博客" type="application/atom+xml">
   
@@ -136,7 +135,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-选择排序" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-前面几种排序方法的比较" class="article article-type-post " itemscope itemprop="blogPost">
  
   <div class="article-inner">
     
@@ -144,7 +143,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      选择排序
+      前面几种排序方法的比较
     </h1>
   
 
@@ -155,26 +154,63 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/04/11/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2020-04-11T14:12:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
+<a href="/2020/04/18/%E5%89%8D%E9%9D%A2%E5%87%A0%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E7%9A%84%E6%AF%94%E8%BE%83/" class="archive-article-date">
+  	<time datetime="2020-04-18T02:39:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-18</time>
 </a>
 		
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><font size=4 ><b>1.概念：</b></font></p>
+        <p><font size=4><b>目前共学习了：冒泡排序、直接插入排序、选择排序、希尔排序、快速排序、归并排序几种排序算法，下面比较一下它们的性能</b></font></p>
 <a id="more"></a>
-<p><font color=gray>选择排序的主要操作是选择，其主要思想是：每趟排序在当前待排序序列中选出关键字值最小（最大）的记录，添加到有序序列中。</p>
-<p>简单选择排序，对待排序的记录序列进行n-1遍的处理，第1遍处理是将A[1…n]中最小者与A[1]交换位置，第2遍处理是将A[2…n]中最小者与A[2]交换位置，……，第i遍处理就是通过n-i次比较，将A[i…n]中最小者与A[il交换位置。这样，经过i遍处理之后，前i个记录的位置就已经按从小到大的顺序排列好了。</p>
-<p><b><font color=black>简单选择排序与气泡排序的区别在</font></b>：气泡排序每次比较后，如果发现顺序不对立即进行交换，而选择排序不立即进行交换，而是找出<font color=black><b>最小关键字</b></font>记录后再进行交换。</font></p>
-<img src="/images/选择排序.png" width="80%" height="80%">
-
-
-<p><font size=4 ><b>2.算法性能：</b></font><br><font color=gray>时间复杂度：O(n²)<br>空间复杂度：O(1)，只需要一个附加程序单元用于交换<br>稳定性：选择排序是不稳定的排序算法，因为无法保证值相等的元素的相对位置不变，例如 [3, 4, 3, 1, 5]这个数组，第一次交换，第一个3和1交换位置，此时原来两个3的相对位置发生了变化。</font></p>
-<p><font size=4 ><b>3.C++程序示例：</b></font></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">int SelectSort(int A[], int n);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int A[10] = &#123; 11,24,16,87,45,6,93,66,74,38 &#125;;</span><br><span class="line">    SelectSort(A, 10);</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line">int count1=0, count2=0;</span><br><span class="line">int SelectSort(int A[], int n)</span><br><span class="line">&#123;</span><br><span class="line">    int i, j, k, min, temp;</span><br><span class="line">    <span class="keyword">for</span>(i=0; i&lt;n-1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        min = i;</span><br><span class="line">        <span class="keyword">for</span>(j=i+1; j&lt;n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            count1++;</span><br><span class="line">            <span class="keyword">if</span>(A[j] &lt; A[min])</span><br><span class="line">            &#123;</span><br><span class="line">                min = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(min != i)</span><br><span class="line">        &#123;</span><br><span class="line">            count2++;</span><br><span class="line">            temp = A[min];</span><br><span class="line">            A[min] = A[i];</span><br><span class="line">            A[i] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(k=0; k&lt;n; k++)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; A[k] &lt;&lt; <span class="string">" "</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl &lt;&lt; <span class="string">"排序结果："</span> ;</span><br><span class="line">    <span class="keyword">for</span>(k=0; k&lt;n; k++)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; A[k] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl &lt;&lt; <span class="string">"一共比较了"</span> &lt;&lt; count1 &lt;&lt; <span class="string">"次，移到了"</span> &lt;&lt; count2 &lt;&lt; <span class="string">"次！"</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果：<br><img src="/images/运行结果2.PNG" width="50%" height="50%"></p>
+<p><b>I. 时间复杂度比较：</b><br><img src="/images/比较.PNG" width="50%" height="50%"><br><b>II. 空间复杂度比较和稳定性比较</b></p>
+<table>
+<thead>
+<tr>
+<th>排序方法</th>
+<th>辅助空间</th>
+<th>稳定性</th>
+<th>适合情况</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>冒泡排序</td>
+<td>O(1)</td>
+<td>稳定</td>
+<td>不太多（简单）</td>
+</tr>
+<tr>
+<td>直接插入排序</td>
+<td>O(1)</td>
+<td>稳定</td>
+<td>大部分已排序时（简单）</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>O(1)</td>
+<td>不稳定</td>
+<td>不太多（简单）</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>O(1)</td>
+<td>不稳定</td>
+<td>不太多（较复杂）</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>O(𝒍𝒐𝒈𝟐𝒏)</td>
+<td>不稳定</td>
+<td>较多，基本有序时反而不好（较复杂）</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>O(𝒏)</td>
+<td>稳定</td>
+<td>都可以，较多时比较好（较复杂）</td>
+</tr>
+</tbody></table>
 
       
 
@@ -233,7 +269,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/11/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/18/%E5%89%8D%E9%9D%A2%E5%87%A0%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E7%9A%84%E6%AF%94%E8%BE%83/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -247,18 +283,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/12/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          希尔排序
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/11/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">直接插入排序</div>
+    <a href="/2020/04/18/%E8%A1%A8%E6%A0%BC%E8%AE%BE%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">表格设置</div>
       <i class="icon-circle-right"></i>
     </a>
   
