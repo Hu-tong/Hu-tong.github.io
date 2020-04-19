@@ -6,16 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>胡同学的博客</title>
+  <title>数据链路层学习笔记 | 胡同学的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="胡同学的博客">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="主要是一些重要的知识点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据链路层学习笔记">
+<meta property="og:url" content="http://yoursite.com/2020/04/19/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="胡同学的博客">
+<meta property="og:description" content="主要是一些重要的知识点">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/mac.png">
+<meta property="article:published_time" content="2020-04-19T14:32:57.000Z">
+<meta property="article:modified_time" content="2020-04-19T14:49:06.229Z">
 <meta property="article:author" content="胡同学">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/mac.png">
   
     <link rel="alternative" href="/atom.xml" title="胡同学的博客" type="application/atom+xml">
   
@@ -129,35 +135,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-数据链路层学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
  
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/04/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      数据链路层学习笔记
     </h1>
   
 
         
         
-<a href="/2020/04/04/hello-world/" class="archive-article-date">
-  	<time datetime="2020-04-04T03:39:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/04/19/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-04-19T14:32:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
 </a>
 		
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
-        
-          <a class="article-more-a" href="/2020/04/04/hello-world/#more">more >></a>
-        
+        <h3 id="主要是一些重要的知识点"><a href="#主要是一些重要的知识点" class="headerlink" title="主要是一些重要的知识点"></a>主要是一些重要的知识点</h3><a id="more"></a>
+<p>1.数据链路层的3个基本问题：<b>封装成帧、透明传输、差错检测</b><br>2.使用点到点信道的数据链路层：<b>PPP协议</b><br>3.使用广播信道的数据链路层：<b>CSMA/CD协议</b><br>4.只要满足CSMA/CD协议的就认为是以太网<br>5.以太网只检错不纠错<br>6.<font color = red><b>MAC帧的格式：</b></font><br><img src="/images/mac.png" width="80%" height="80%"><br><b>目的地址：</b>目标适配器的MAC地址(<font face="楷体">即物理地址，也称为链路地址、MAC地址、LAN地址，它是局域网或广域网定义的节点地址。它包含在数据链路层所用的帧中，是最低级的地址。物理地址在网络(LAN或者WAN)中使用，这类地址的长度和格式是可变的。以太网使用6个字节(48位)物理地址，在网络接口卡(NIC)上标明。</font>)<br><b>源地址：</b>传输该帧到局域网上的适配器的MAC地址<br><b>类型字段：</b>用来标记上一层使用的是什么协议，以便把收到MAC帧的数据上交给上一层的这个协议<br><b>数据字段：</b>46~1500个字节，46是因为以太网MAC帧长不能小于64字节(<font face="楷体">最小帧长度保证有足够的传输时间用于以太网网络接口卡精确地检测冲突，这一最小时内间是根据网络的最大电缆长度和帧沿电缆长度传播所要求的时间确定的</font>)，1500是因为以太网的最大传输单元(<b>MTU</b>)是1500字节。当数据字段的长度小于46字节时，应在数据字段的后面加入整数字节的填充字段，当传输到网络层时，网络层使用IP数据报首部中的长度字段来去除填充部分。这个字段承载了IP数据报<br><b>FCS：</b>使得接收适配器能检测帧中是否引入了差错<br><b>前同步码：</b>8个字节，前7个都是<em>10101010</em>，最后一个是<em>10101011</em>；前7字节用于“唤醒”接收适配器，并将它们的时钟和发送方的时钟同步。第8个字节的最后两个比特(即两个‘1’)警告接收适配器重要的内容要来了</p>
+
       
 
       
@@ -168,16 +175,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/04/hello-world/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/19/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/18/%E5%89%8D%E9%9D%A2%E5%87%A0%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E7%9A%84%E6%AF%94%E8%BE%83/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前面几种排序方法的比较</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -197,149 +263,17 @@
 
 
 
-	
   
-    <article id="post-如何搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
- 
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">如何搭建个人博客</a>
-    </h1>
   
 
-        
-        
-<a href="/2020/04/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-04-03T13:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="利用hexo搭建博客步骤"><a href="#利用hexo搭建博客步骤" class="headerlink" title="利用hexo搭建博客步骤"></a>利用hexo搭建博客步骤</h3><img src="/images/cat.PNG">
-        
-          <a class="article-more-a" href="/2020/04/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more">more >></a>
-        
-      
+  
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+  
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/03/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
+  
 
 	
-  
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
- 
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-04-03T03:47:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        提示:查看内容需要输入正确密码！
-        
-          <a class="article-more-a" href="/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-	
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
-  
-
-
           </div>
         </div>
       </div>
@@ -371,8 +305,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
