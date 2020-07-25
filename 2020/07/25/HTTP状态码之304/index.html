@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>数据链路层学习笔记 | 胡同学的博客</title>
+  <title>hexo admin字体和图片的设置(持续更新) | 胡同学的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="主要是一些重要的知识点">
+  <meta name="description" content="常见的http状态码：100 继续发送请求 101 切换协议  200 成功 301 永久重定向 302 暂时重定向 400 语法错误 403 没有足够的权限 404 找不到对应的资源 500 服务器内部错误 503 服务不可用3XX系列的状态码表示重定向，这系列中的304比较特殊，304 的标准解释是：客户端有缓冲的文档并发出了一个条件性的请求。服务器告诉客户端，原来缓冲的文档还可以继续使用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据链路层学习笔记">
-<meta property="og:url" content="http://yoursite.com/2020/04/19/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="hexo admin字体和图片的设置(持续更新)">
+<meta property="og:url" content="http://yoursite.com/2020/07/25/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E4%B9%8B304/index.html">
 <meta property="og:site_name" content="胡同学的博客">
-<meta property="og:description" content="主要是一些重要的知识点">
+<meta property="og:description" content="常见的http状态码：100 继续发送请求 101 切换协议  200 成功 301 永久重定向 302 暂时重定向 400 语法错误 403 没有足够的权限 404 找不到对应的资源 500 服务器内部错误 503 服务不可用3XX系列的状态码表示重定向，这系列中的304比较特殊，304 的标准解释是：客户端有缓冲的文档并发出了一个条件性的请求。服务器告诉客户端，原来缓冲的文档还可以继续使用。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/images/mac.png">
-<meta property="article:published_time" content="2020-04-19T14:32:57.000Z">
-<meta property="article:modified_time" content="2020-04-19T14:49:06.229Z">
+<meta property="article:published_time" content="2020-07-25T11:19:43.280Z">
+<meta property="article:modified_time" content="2020-07-25T11:20:40.872Z">
 <meta property="article:author" content="胡同学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/mac.png">
   
     <link rel="alternative" href="/atom.xml" title="胡同学的博客" type="application/atom+xml">
   
@@ -135,7 +133,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-数据链路层学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-HTTP状态码之304" class="article article-type-post " itemscope itemprop="blogPost">
  
   <div class="article-inner">
     
@@ -143,7 +141,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      数据链路层学习笔记
+      hexo admin字体和图片的设置(持续更新)
     </h1>
   
 
@@ -154,16 +152,38 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/04/19/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-04-19T14:32:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
+<a href="/2020/07/25/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E4%B9%8B304/" class="archive-article-date">
+  	<time datetime="2020-07-25T11:19:43.280Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-25</time>
 </a>
 		
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="主要是一些重要的知识点"><a href="#主要是一些重要的知识点" class="headerlink" title="主要是一些重要的知识点"></a>主要是一些重要的知识点</h3><a id="more"></a>
-<p>1.数据链路层的3个基本问题：<b>封装成帧、透明传输、差错检测</b><br>2.使用点到点信道的数据链路层：<b>PPP协议</b><br>3.使用广播信道的数据链路层：<b>CSMA/CD协议</b><br>4.只要满足CSMA/CD协议的就认为是以太网<br>5.以太网只检错不纠错<br>6.<font color = red><b>MAC帧的格式：</b></font><br><img src="/images/mac.png" width="80%" height="80%"><br><b>目的地址：</b>目标适配器的MAC地址(<font face="楷体">即物理地址，也称为链路地址、MAC地址、LAN地址，它是局域网或广域网定义的节点地址。它包含在数据链路层所用的帧中，是最低级的地址。物理地址在网络(LAN或者WAN)中使用，这类地址的长度和格式是可变的。以太网使用6个字节(48位)物理地址，在网络接口卡(NIC)上标明。</font>)<br><b>源地址：</b>传输该帧到局域网上的适配器的MAC地址<br><b>类型字段：</b>用来标记上一层使用的是什么协议，以便把收到MAC帧的数据上交给上一层的这个协议<br><b>数据字段：</b>46~1500个字节，46是因为以太网MAC帧长不能小于64字节(<font face="楷体">最小帧长度保证有足够的传输时间用于以太网网络接口卡精确地检测冲突，这一最小时内间是根据网络的最大电缆长度和帧沿电缆长度传播所要求的时间确定的</font>)，1500是因为以太网的最大传输单元(<b>MTU</b>)是1500字节。当数据字段的长度小于46字节时，应在数据字段的后面加入整数字节的填充字段，当传输到网络层时，网络层使用IP数据报首部中的长度字段来去除填充部分。这个字段承载了IP数据报<br><b>FCS：</b>使得接收适配器能检测帧中是否引入了差错<br><b>前同步码：</b>8个字节，前7个都是<em>10101010</em>，最后一个是<em>10101011</em>；前7字节用于“唤醒”接收适配器，并将它们的时钟和发送方的时钟同步。第8个字节的最后两个比特(即两个‘1’)警告接收适配器重要的内容要来了</p>
+        <h5 id="常见的http状态码："><a href="#常见的http状态码：" class="headerlink" title="常见的http状态码："></a><font color = "DodgerBlue">常见的http状态码：</font></h5><pre><code>100 继续发送请求
+101 切换协议 
+200 成功
+301 永久重定向
+302 暂时重定向
+400 语法错误
+403 没有足够的权限
+404 找不到对应的资源
+500 服务器内部错误
+503 服务不可用</code></pre><p>3XX系列的状态码表示重定向，这系列中的304比较特殊，304 的标准解释是：客户端有缓冲的文档并发出了一个条件性的请求。服务器告诉客户端，原来缓冲的文档还可以继续使用。</p>
+<h5 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a><font color = "DodgerBlue">浏览器缓存</font></h5><p><strong>浏览器缓存</strong>是浏览器将用户请求过的静态资源（html、css、js），存储到电脑本地磁盘中，当浏览器再次访问时，就可以直接从本地加载了，不需要再去服务端请求了。</p>
+<p>缓存带来的优点：<br>减少了冗余的数据传输，节省网费；减少服务器的负担，提升网站性能；加快客户端加载网页的速度等</p>
+<p>按<strong>状态码</strong>来区分其为两大类，分别是强制缓存–200和<font color = "red">协商缓存–304</font>。</p>
+<h5 id="强制缓存"><a href="#强制缓存" class="headerlink" title="强制缓存"></a><font color = "DodgerBlue">强制缓存</font></h5><p>强制缓存是这样操作的：如果资源没过期，就取缓存，如果过期了，则请求服务器。</p>
+<p>那么如何判断资源是否过期呢？<br>主要是看 response headers （请求头）中的 Cache-Control 的值，比如Cache-Control 的max-age = 31xxxxxxx，表示在这些秒内，都直接使用缓存，超过了就继续请求服务器。<font color = "DodgerBlue">如果Cache-Control的值是no-cache，说明没命中强缓存，那么就选择<strong>协商缓存</strong>。</font></p>
+<p>和 Cache-Control 并列的，还有一个 Expires ，听说已经被淘汰了，这里就不进行讨论了。</p>
+<h5 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a><font color = "DodgerBlue">协商缓存</font></h5><p>强制缓存是为了给客户端自给自足用的。当客户端请求该资源时发现其过期了，即Cache-Control 的值为 no-cache （不强缓存）或者 max-age 过期了 （强缓存，但总有过期的时候），协商缓存就被触发。协商缓存是需要客户端和服务器两端进行交互的。</p>
+<p>协商缓存使用到了headers请求头里的两个字段：<br><strong>ETag</strong>：每个文件有一个，改动文件了就变了，为了应对资源修改时间可能很频繁的情况出现的，是基于资源的内容计算出来的值<br><strong>Last-Modified</strong>：文件的修改时间，精确到秒</p>
+<p>每次请求返回来 response header 中的 etag和 last-modified，在下次请求时在 request header 就把这两个带上，服务端把你带过来的标识进行对比，然后判断资源是否更改了，如果更改就直接返回新的资源，和更新对应的response header的标识etag、last-modified。如果资源没有变，那么etag、last-modified就不变，这时候对客户端来说，每次请求都是要进行协商缓存了，即：<br><font color = "MediumBlue">发请求–&gt;看资源是否过期–&gt;过期–&gt;请求服务器–&gt;服务器对比资源是否真的过期–&gt;没过期–&gt;返回304状态码–&gt;客户端用缓存的老资源</font><br>这就是一条完整的协商缓存的过程。</p>
+<p>所以协商缓存步骤总结如下：<br>（1）请求资源时，把用户本地该资源的 ETag 同时带到服务端，服务端和最新资源做对比。<br>（2）如果资源没更改，返回304，浏览器读取本地缓存。<br>（3）如果资源有更改，返回200，返回最新的资源。</p>
+<p>协商缓存与强制缓存的区别在于强制缓存不需要访问服务器，返回结果是200，协商缓存需要访问服务器，如果命中缓存的话，返回结果是304。</p>
+<blockquote>
+<p><a href="https://www.jianshu.com/p/9c95db596df5" target="_blank" rel="noopener">彻底弄懂强缓存与协商缓存</a><br><a href="https://juejin.im/post/5c417993f265da61285a6075" target="_blank" rel="noopener">浏览器缓存</a></p>
+</blockquote>
 
       
 
@@ -222,7 +242,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/19/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/25/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E4%B9%8B304/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -236,18 +256,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/25/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E4%B9%8B304/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          hexo admin字体和图片的设置(持续更新)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/18/%E5%89%8D%E9%9D%A2%E5%87%A0%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E7%9A%84%E6%AF%94%E8%BE%83/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">前面几种排序方法的比较</div>
+    <a href="/2020/04/19/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据链路层学习笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
