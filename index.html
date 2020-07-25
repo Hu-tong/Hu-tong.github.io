@@ -139,45 +139,24 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/25/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E4%B9%8B304/">hexo admin字体和图片的设置(持续更新)</a>
+      <a class="article-title" href="/2020/07/25/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E4%B9%8B304/">HTTP状态码之304</a>
     </h1>
   
 
         
         
 <a href="/2020/07/25/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E4%B9%8B304/" class="archive-article-date">
-  	<time datetime="2020-07-25T11:19:43.280Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-25</time>
+  	<time datetime="2020-07-25T11:19:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-25</time>
 </a>
 		
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="常见的http状态码："><a href="#常见的http状态码：" class="headerlink" title="常见的http状态码："></a><font color = "DodgerBlue">常见的http状态码：</font></h5><pre><code>100 继续发送请求
-101 切换协议 
-200 成功
-301 永久重定向
-302 暂时重定向
-400 语法错误
-403 没有足够的权限
-404 找不到对应的资源
-500 服务器内部错误
-503 服务不可用</code></pre><p>3XX系列的状态码表示重定向，这系列中的304比较特殊，304 的标准解释是：客户端有缓冲的文档并发出了一个条件性的请求。服务器告诉客户端，原来缓冲的文档还可以继续使用。</p>
-<h5 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a><font color = "DodgerBlue">浏览器缓存</font></h5><p><strong>浏览器缓存</strong>是浏览器将用户请求过的静态资源（html、css、js），存储到电脑本地磁盘中，当浏览器再次访问时，就可以直接从本地加载了，不需要再去服务端请求了。</p>
-<p>缓存带来的优点：<br>减少了冗余的数据传输，节省网费；减少服务器的负担，提升网站性能；加快客户端加载网页的速度等</p>
-<p>按<strong>状态码</strong>来区分其为两大类，分别是强制缓存–200和<font color = "red">协商缓存–304</font>。</p>
-<h5 id="强制缓存"><a href="#强制缓存" class="headerlink" title="强制缓存"></a><font color = "DodgerBlue">强制缓存</font></h5><p>强制缓存是这样操作的：如果资源没过期，就取缓存，如果过期了，则请求服务器。</p>
-<p>那么如何判断资源是否过期呢？<br>主要是看 response headers （请求头）中的 Cache-Control 的值，比如Cache-Control 的max-age = 31xxxxxxx，表示在这些秒内，都直接使用缓存，超过了就继续请求服务器。<font color = "DodgerBlue">如果Cache-Control的值是no-cache，说明没命中强缓存，那么就选择<strong>协商缓存</strong>。</font></p>
-<p>和 Cache-Control 并列的，还有一个 Expires ，听说已经被淘汰了，这里就不进行讨论了。</p>
-<h5 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a><font color = "DodgerBlue">协商缓存</font></h5><p>强制缓存是为了给客户端自给自足用的。当客户端请求该资源时发现其过期了，即Cache-Control 的值为 no-cache （不强缓存）或者 max-age 过期了 （强缓存，但总有过期的时候），协商缓存就被触发。协商缓存是需要客户端和服务器两端进行交互的。</p>
-<p>协商缓存使用到了headers请求头里的两个字段：<br><strong>ETag</strong>：每个文件有一个，改动文件了就变了，为了应对资源修改时间可能很频繁的情况出现的，是基于资源的内容计算出来的值<br><strong>Last-Modified</strong>：文件的修改时间，精确到秒</p>
-<p>每次请求返回来 response header 中的 etag和 last-modified，在下次请求时在 request header 就把这两个带上，服务端把你带过来的标识进行对比，然后判断资源是否更改了，如果更改就直接返回新的资源，和更新对应的response header的标识etag、last-modified。如果资源没有变，那么etag、last-modified就不变，这时候对客户端来说，每次请求都是要进行协商缓存了，即：<br><font color = "MediumBlue">发请求–&gt;看资源是否过期–&gt;过期–&gt;请求服务器–&gt;服务器对比资源是否真的过期–&gt;没过期–&gt;返回304状态码–&gt;客户端用缓存的老资源</font><br>这就是一条完整的协商缓存的过程。</p>
-<p>所以协商缓存步骤总结如下：<br>（1）请求资源时，把用户本地该资源的 ETag 同时带到服务端，服务端和最新资源做对比。<br>（2）如果资源没更改，返回304，浏览器读取本地缓存。<br>（3）如果资源有更改，返回200，返回最新的资源。</p>
-<p>协商缓存与强制缓存的区别在于强制缓存不需要访问服务器，返回结果是200，协商缓存需要访问服务器，如果命中缓存的话，返回结果是304。</p>
-<blockquote>
-<p><a href="https://www.jianshu.com/p/9c95db596df5" target="_blank" rel="noopener">彻底弄懂强缓存与协商缓存</a><br><a href="https://juejin.im/post/5c417993f265da61285a6075" target="_blank" rel="noopener">浏览器缓存</a></p>
-</blockquote>
-
+        <h5 id="常见的http状态码："><a href="#常见的http状态码：" class="headerlink" title="常见的http状态码："></a><font color = "DodgerBlue">常见的http状态码：</font>
+        
+          <a class="article-more-a" href="/2020/07/25/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E4%B9%8B304/#more">more >></a>
+        
       
 
       

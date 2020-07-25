@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>hexo admin字体和图片的设置(持续更新) | 胡同学的博客</title>
+  <title>HTTP状态码之304 | 胡同学的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="常见的http状态码：100 继续发送请求 101 切换协议  200 成功 301 永久重定向 302 暂时重定向 400 语法错误 403 没有足够的权限 404 找不到对应的资源 500 服务器内部错误 503 服务不可用3XX系列的状态码表示重定向，这系列中的304比较特殊，304 的标准解释是：客户端有缓冲的文档并发出了一个条件性的请求。服务器告诉客户端，原来缓冲的文档还可以继续使用。">
+  <meta name="description" content="常见的http状态码：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo admin字体和图片的设置(持续更新)">
+<meta property="og:title" content="HTTP状态码之304">
 <meta property="og:url" content="http://yoursite.com/2020/07/25/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E4%B9%8B304/index.html">
 <meta property="og:site_name" content="胡同学的博客">
-<meta property="og:description" content="常见的http状态码：100 继续发送请求 101 切换协议  200 成功 301 永久重定向 302 暂时重定向 400 语法错误 403 没有足够的权限 404 找不到对应的资源 500 服务器内部错误 503 服务不可用3XX系列的状态码表示重定向，这系列中的304比较特殊，304 的标准解释是：客户端有缓冲的文档并发出了一个条件性的请求。服务器告诉客户端，原来缓冲的文档还可以继续使用。">
+<meta property="og:description" content="常见的http状态码：">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-07-25T11:19:43.280Z">
-<meta property="article:modified_time" content="2020-07-25T11:20:40.872Z">
+<meta property="article:published_time" content="2020-07-25T11:19:00.000Z">
+<meta property="article:modified_time" content="2020-07-25T11:27:05.163Z">
 <meta property="article:author" content="胡同学">
 <meta name="twitter:card" content="summary">
   
@@ -141,7 +141,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hexo admin字体和图片的设置(持续更新)
+      HTTP状态码之304
     </h1>
   
 
@@ -153,14 +153,14 @@
         </span>
 
 <a href="/2020/07/25/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E4%B9%8B304/" class="archive-article-date">
-  	<time datetime="2020-07-25T11:19:43.280Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-25</time>
+  	<time datetime="2020-07-25T11:19:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-25</time>
 </a>
 		
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="常见的http状态码："><a href="#常见的http状态码：" class="headerlink" title="常见的http状态码："></a><font color = "DodgerBlue">常见的http状态码：</font></h5><pre><code>100 继续发送请求
+        <h5 id="常见的http状态码："><a href="#常见的http状态码：" class="headerlink" title="常见的http状态码："></a><font color = "DodgerBlue">常见的http状态码：</font><a id="more"></a></h5><pre><code>100 继续发送请求
 101 切换协议 
 200 成功
 301 永久重定向
@@ -178,7 +178,7 @@
 <p>和 Cache-Control 并列的，还有一个 Expires ，听说已经被淘汰了，这里就不进行讨论了。</p>
 <h5 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a><font color = "DodgerBlue">协商缓存</font></h5><p>强制缓存是为了给客户端自给自足用的。当客户端请求该资源时发现其过期了，即Cache-Control 的值为 no-cache （不强缓存）或者 max-age 过期了 （强缓存，但总有过期的时候），协商缓存就被触发。协商缓存是需要客户端和服务器两端进行交互的。</p>
 <p>协商缓存使用到了headers请求头里的两个字段：<br><strong>ETag</strong>：每个文件有一个，改动文件了就变了，为了应对资源修改时间可能很频繁的情况出现的，是基于资源的内容计算出来的值<br><strong>Last-Modified</strong>：文件的修改时间，精确到秒</p>
-<p>每次请求返回来 response header 中的 etag和 last-modified，在下次请求时在 request header 就把这两个带上，服务端把你带过来的标识进行对比，然后判断资源是否更改了，如果更改就直接返回新的资源，和更新对应的response header的标识etag、last-modified。如果资源没有变，那么etag、last-modified就不变，这时候对客户端来说，每次请求都是要进行协商缓存了，即：<br><font color = "MediumBlue">发请求–&gt;看资源是否过期–&gt;过期–&gt;请求服务器–&gt;服务器对比资源是否真的过期–&gt;没过期–&gt;返回304状态码–&gt;客户端用缓存的老资源</font><br>这就是一条完整的协商缓存的过程。</p>
+<p>每次请求返回来 response header 中的 etag和 last-modified，在下次请求时在 request header 就把这两个带上，服务端把你带过来的标识进行对比，然后判断资源是否更改了，如果更改就直接返回新的资源，和更新对应的response header的标识etag、last-modified。如果资源没有变，那么etag、last-modified就不变，这时候对客户端来说，每次请求都是要进行协商缓存了，即：<br><font color = "DodgerBlue">发请求–&gt;看资源是否过期–&gt;过期–&gt;请求服务器–&gt;服务器对比资源是否真的过期–&gt;没过期–&gt;返回304状态码–&gt;客户端用缓存的老资源</font><br>这就是一条完整的协商缓存的过程。</p>
 <p>所以协商缓存步骤总结如下：<br>（1）请求资源时，把用户本地该资源的 ETag 同时带到服务端，服务端和最新资源做对比。<br>（2）如果资源没更改，返回304，浏览器读取本地缓存。<br>（3）如果资源有更改，返回200，返回最新的资源。</p>
 <p>协商缓存与强制缓存的区别在于强制缓存不需要访问服务器，返回结果是200，协商缓存需要访问服务器，如果命中缓存的话，返回结果是304。</p>
 <blockquote>
